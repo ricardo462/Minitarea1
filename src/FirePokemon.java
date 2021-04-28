@@ -5,14 +5,15 @@ public class FirePokemon extends AbstractPokemon{
     }
 
     public void attack(IPokemon pokemon){
+        pokemon.receiveFireDamage();
     }
-    public void receiveFireDamage(IPokemon pokemon){
+    public void receiveFireDamage(){
         health -= 5;
     }
-    public void receiveWaterDamage(IPokemon pokemon){
+    public void receiveWaterDamage(){
         health -= 10;
     }
-    public void receiveGrassDamage(IPokemon pokemon){
+    public void receiveGrassDamage(){
         health -=5;
     }
 }

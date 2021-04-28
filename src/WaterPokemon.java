@@ -4,14 +4,16 @@ public class WaterPokemon extends AbstractPokemon{
         super(name, species, health);
     }
 
-    public void attack(IPokemon pokemon){}
-    public void receiveFireDamage(IPokemon pokemon){
+    public void attack(IPokemon pokemon){
+        pokemon.receiveWaterDamage();
+    }
+    public void receiveFireDamage(){
         health -= 5;
     }
-    public void receiveWaterDamage(IPokemon pokemon){
+    public void receiveWaterDamage(){
         health -= 5;
     }
-    public void receiveGrassDamage(IPokemon pokemon){
+    public void receiveGrassDamage(){
         health -= 10;
     }
 }

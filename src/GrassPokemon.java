@@ -3,14 +3,16 @@ public class GrassPokemon extends AbstractPokemon{
         super(name, species, health);
     }
 
-    public void attack(IPokemon pokemon){}
-    public void receiveFireDamage(IPokemon pokemon){
+    public void attack(IPokemon pokemon){
+        pokemon.receiveGrassDamage();
+    }
+    public void receiveFireDamage(){
         health -= 10;
     }
-    public void receiveWaterDamage(IPokemon pokemon){
+    public void receiveWaterDamage(){
         health -= 5;
     }
-    public void receiveGrassDamage(IPokemon pokemon){
+    public void receiveGrassDamage(){
         health -= 5;
     }
 }

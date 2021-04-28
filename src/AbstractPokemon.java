@@ -38,4 +38,8 @@ public abstract class AbstractPokemon implements IPokemon {
         else return false;
     }
 
+    @Override
+    public String toString() {
+        return name + " " + species + " " + health;
+    }
 }

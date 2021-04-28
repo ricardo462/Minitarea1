@@ -4,8 +4,8 @@ public interface IPokemon {
     public void setName(String name);
     public void setSpecies(String species);
     public void attack(IPokemon p);
-    public void receiveFireDamage(IPokemon p);
-    public void receiveWaterDamage(IPokemon p);
-    public void receiveGrassDamage(IPokemon p);
+    public void receiveFireDamage();
+    public void receiveWaterDamage();
+    public void receiveGrassDamage();
 }
 
