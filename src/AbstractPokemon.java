@@ -38,7 +38,4 @@ public abstract class AbstractPokemon implements IPokemon {
         else return false;
     }
 
-    public void receiveDamage(int damage){
-        health -= damage;
-    }
 }
