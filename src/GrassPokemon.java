@@ -4,15 +4,28 @@ public class GrassPokemon extends AbstractPokemon{
     }
 
     public void attack(IPokemon pokemon){
-        pokemon.receiveGrassDamage();
+        if(!isDefeated()){
+        pokemon.receiveGrassDamage();}
     }
     public void receiveFireDamage(){
-        health -= 10;
+        if(!isDefeated()){
+        health -= 10;}
+        else{
+            System.out.println("Pokemon's can not attack defeated Pokemon");
+        }
     }
     public void receiveWaterDamage(){
-        health -= 5;
+        if(!isDefeated()){
+            health -= 5;}
+        else{
+            System.out.println("Pokemon's can not attack defeated Pokemon");
+        }
     }
     public void receiveGrassDamage(){
-        health -= 5;
+        if(!isDefeated()){
+            health -= 5;}
+        else{
+            System.out.println("Pokemon's can not attack defeated Pokemon");
+        }
     }
 }

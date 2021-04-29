@@ -40,6 +40,6 @@ public abstract class AbstractPokemon implements IPokemon {
 
     @Override
     public String toString() {
-        return name + " " + species + " " + health;
+        return "Pokemon's name: " + name + ", Pokemon's type: "+ this.getClass().getName() + ", Pokemon's species: " + species + ", Pokemon's current health points: " + health;
     }
 }
