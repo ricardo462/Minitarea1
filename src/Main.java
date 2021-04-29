@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        // Creating Pokemons
+        // Creating Pokemon's
         WaterPokemon squirtle = new WaterPokemon("Ed", "Squirtle", 100);
         FirePokemon charmander = new FirePokemon("Edd", "Charmander", 100);
         GrassPokemon bulbbasaur = new GrassPokemon("Eddy", "bulbasaur", 100);
@@ -35,10 +33,10 @@ public class Main {
         // Displays the the info of the victim before and after the attacker attacks him
         System.out.println("\n\n" +attacker.getClass().getName() + " attacks " + victim.getClass().getName() + "\n");
         System.out.println("Victim's info before the attack:");
-        System.out.println(victim.toString());
+        System.out.println(victim);
         attacker.attack(victim);
         System.out.println("Victim's info after the attack:");
-        System.out.println(victim.toString());
+        System.out.println(victim);
         System.out.println("---------------------------------------------------------------------------------------");
     }
     }
