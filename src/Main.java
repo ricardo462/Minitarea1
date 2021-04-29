@@ -2,27 +2,39 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        // Creating Pokemons
         WaterPokemon squirtle = new WaterPokemon("Ed", "Squirtle", 100);
         FirePokemon charmander = new FirePokemon("Edd", "Charmander", 100);
         GrassPokemon bulbbasaur = new GrassPokemon("Eddy", "bulbasaur", 100);
-        IPokemon[] pokemonsArray = new IPokemon[]{squirtle, charmander, bulbbasaur};
 
-        attack(charmander,bulbbasaur);
-        attack(bulbbasaur,charmander);
-        attack(charmander, squirtle);
-        attack(squirtle, charmander);
-        attack(squirtle, bulbbasaur);
-        attack(bulbbasaur, squirtle);
+        // Checking for the weaknesses and strengths
+        System.out.println("Checking for weaknesses and strengths");
+        testPokemonAttack(charmander,bulbbasaur);
+        testPokemonAttack(bulbbasaur,charmander);
+        testPokemonAttack(charmander, squirtle);
+        testPokemonAttack(squirtle, charmander);
+        testPokemonAttack(squirtle, bulbbasaur);
+        testPokemonAttack(bulbbasaur, squirtle);
 
 
         // charmander got confused and began to attack himself
-        System.out.println("\ncharmander got confused and began to attack himself");
+        System.out.println("\n\ncharmander got confused and began to attack himself");
         for(int i = 0; i<17; i++){
-            charmander.attack(charmander);
+            testPokemonAttack(charmander, charmander);
             System.out.println(charmander.toString());
         }
+
+        // testing that a defeated Pokemon can not attack and receive damage
+        System.out.println("\n\nTesting that a defeated Pokemon can not attack and receive damage");
+        testPokemonAttack(charmander, squirtle);
+        testPokemonAttack(squirtle, charmander);
+
+
+
         }
-    public static void attack(IPokemon attacker, IPokemon victim){
+
+    public static void testPokemonAttack(IPokemon attacker, IPokemon victim){
+        // Displays the the info of the victim before and after the attacker attacks him
         System.out.println("\n\n" +attacker.getClass().getName() + " attacks " + victim.getClass().getName() + "\n");
         System.out.println("Victim's info before the attack:");
         System.out.println(victim.toString());
