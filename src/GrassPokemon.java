@@ -17,7 +17,7 @@ public class GrassPokemon extends AbstractPokemon{
     // receives damage from a fire pokemon unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
     public void receiveFireDamage(){
         if(!isDefeated()){
-        health -= 10;}
+        setHealth(getHealth()- 10);}
         else{
             System.out.println("Pokemon's can not attack defeated Pokemon");
         }
@@ -25,7 +25,7 @@ public class GrassPokemon extends AbstractPokemon{
     // receives damage from a water pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
     public void receiveWaterDamage(){
         if(!isDefeated()){
-            health -= 5;}
+            setHealth(getHealth()- 5);}
         else{
             System.out.println("Pokemon's can not attack defeated Pokemon");
         }
@@ -33,7 +33,7 @@ public class GrassPokemon extends AbstractPokemon{
     // receives damage from a grass pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
     public void receiveGrassDamage(){
         if(!isDefeated()){
-            health -= 5;}
+            setHealth(getHealth()- 5);}
         else{
             System.out.println("Pokemon's can not attack defeated Pokemon");
         }

@@ -16,20 +16,18 @@ public class Main {
         testPokemonAttack(squirtle, bulbbasaur);
         testPokemonAttack(bulbbasaur, squirtle);
 
-
+        // Defeating a Pokemon
+        System.out.println("\n\nDefeating a Pokemon");
         // charmander got confused and began to attack himself
-        System.out.println("\n\ncharmander got confused and began to attack himself");
+        System.out.println("charmander got confused and began to attack himself");
         for(int i = 0; i<17; i++){
             testPokemonAttack(charmander, charmander);
-            System.out.println(charmander.toString());
         }
 
         // testing that a defeated Pokemon can not attack and receive damage
         System.out.println("\n\nTesting that a defeated Pokemon can not attack and receive damage");
         testPokemonAttack(charmander, squirtle);
         testPokemonAttack(squirtle, charmander);
-
-
 
         }
 

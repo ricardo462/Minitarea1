@@ -1,12 +1,12 @@
 public abstract class AbstractPokemon implements IPokemon {
-    protected String name;
-    protected String species;
-    protected int health;
+    private String name;
+    private String species;
+    private int health;
 
     public AbstractPokemon(String name, String species, int health){
         setName(name);
         setSpecies(species);
-        setHealth(getHealth());
+        setHealth(health);
     }
     // Getters and setters
 
