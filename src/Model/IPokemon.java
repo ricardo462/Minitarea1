@@ -1,3 +1,5 @@
+package Model;
+
 public interface IPokemon {
     // Getters
     // gets the name of the pokemon
@@ -7,7 +9,7 @@ public interface IPokemon {
     public String getSpecies();
 
     // gets the health of the pokemon
-    public int getHealth();
+    public int getCurrentHP();
 
     // Setters
     // sets the name of the pokemon
@@ -17,7 +19,7 @@ public interface IPokemon {
     public void setSpecies(String species);
 
     // sets the health of the pokemon
-    public void setHealth(int health);
+    public void setCurrentHP(int currentHP);
 
     // Implementing double dispatch:
     // A pokemon doesn't know what kind of pokemon is attacking, but he knows what kind of Pokemon is itself,
@@ -26,11 +28,11 @@ public interface IPokemon {
     // attacks another pokemon unless the current pokemon is defeated
     public void attack(IPokemon p);
     // receives damage from a fire pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
-    public void receiveFireDamage();
+    public void receiveFireDamage(FirePokemon firePokemon);
     // receives damage from a water pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
-    public void receiveWaterDamage();
+    public void receiveWaterDamage(WaterPokemon waterPokemon);
     // receives damage from a grass pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
-    public void receiveGrassDamage();
+    public void receiveGrassDamage(GrassPokemon grassPokemon);
     // checks if the pokemon is defeated
     public boolean isDefeated();
 }

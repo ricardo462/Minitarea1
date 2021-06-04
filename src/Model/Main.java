@@ -1,3 +1,9 @@
+package Model;
+
+import Model.FirePokemon;
+import Model.GrassPokemon;
+import Model.IPokemon;
+
 public class Main {
     public static void main(String[] args) {
         // Creating Pokemon's
