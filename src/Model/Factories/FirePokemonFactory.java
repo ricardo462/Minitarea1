@@ -9,6 +9,6 @@ public class FirePokemonFactory extends AbstractFactory implements IFactory{
 
     @Override
     public FirePokemon create() {
-        return null;
+        return new FirePokemon(getName(), getSpecies(), getMaxHP(), getMaxPP());
     }
 }

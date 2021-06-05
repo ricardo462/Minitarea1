@@ -10,6 +10,6 @@ public class GrassPokemonFactory extends AbstractFactory implements IFactory{
 
     @Override
     public GrassPokemon create() {
-        return null;
+        return new GrassPokemon(getName(), getSpecies(), getMaxHP(), getMaxPP());
     }
 }

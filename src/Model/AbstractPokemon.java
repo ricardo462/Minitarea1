@@ -16,10 +16,11 @@ public abstract class AbstractPokemon implements IPokemon {
     public AbstractPokemon(String name, String species, int maxHP, int maxPP){
         setName(name);
         setSpecies(species);
-        setCurrentHP(maxHP);
-        setCurrentPP(maxPP);
         this.maxHP = maxHP;
         this.maxPP = maxPP;
+        setCurrentHP(maxHP);
+        setCurrentPP(maxPP);
+
     }
     // Getters and setters
 
@@ -50,7 +51,7 @@ public abstract class AbstractPokemon implements IPokemon {
 
     // sets the HP of the pokemon. If it exceeds the maximum value, it sets it to the maximum
     public void setCurrentHP(int currentHP) {
-        if(currentHP + getCurrentHP() > getMaxHP()) {
+        if(currentHP > getMaxHP()) {
             this.currentHP = getMaxHP();
         } else {
             this.currentHP = currentHP;
@@ -62,7 +63,7 @@ public abstract class AbstractPokemon implements IPokemon {
     }
     // sets the PP of the pokemon. If it exceeds the maximum value, it sets it to the maximum
     public void setCurrentPP(int currentPP) {
-        if (currentPP + getCurrentPP() > getMaxPP()) {
+        if (currentPP > getMaxPP()) {
             this.currentPP = maxPP;
         } else {
             this.currentPP = currentPP;
@@ -84,7 +85,7 @@ public abstract class AbstractPokemon implements IPokemon {
     // Returns the relevant info of the Pokemon
     @Override
     public String toString() {
-        return "Pokemon's name: " + getName() + ", Pokemon's type: "+ this.getClass().getName() + ", Pokemon's species: " + getSpecies() + ", Pokemon's current health points: " + getCurrentHP();
+        return "Pokemon's name: " + getName() + ", Pokemon's type: "+ this.getClass().getName() + ", Pokemon's species: " + getSpecies() + ", Pokemon's current HP: " + getCurrentHP() + ", Pokemon's current PP: " + getCurrentPP() + " Pokemon's max HP: " + getMaxHP() + " Pokemon's max PP: " + getMaxPP();
     }
 
     @Override
@@ -94,7 +95,7 @@ public abstract class AbstractPokemon implements IPokemon {
 
     @Override
     public void useEther(Ether ether) {
-        setCurrentPP(getCurrentPP());
+        setCurrentPP(getCurrentPP() + ether.getRestorePP());
     }
 
     @Override
