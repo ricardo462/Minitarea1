@@ -15,6 +15,15 @@ public interface IPokemon {
     // gets the health of the pokemon
     public int getCurrentHP();
 
+    /* gets the current PP of the pokemon */
+    int getCurrentPP();
+
+    /* gets the maximum HP of the pokemon */
+    public int getMaxHP();
+
+    /* gets the maximum PP of the pokemon */
+    public int getMaxPP();
+
     // Setters
     // sets the name of the pokemon
     public void setName(String name);
@@ -24,6 +33,9 @@ public interface IPokemon {
 
     // sets the health of the pokemon
     public void setCurrentHP(int currentHP);
+
+    /* sets the PP of the pokemon. If it exceeds the maximum value, it sets it to the maximum */
+    public void setCurrentPP(int currentPP);
 
     // Implementing double dispatch:
     // A pokemon doesn't know what kind of pokemon is attacking, but he knows what kind of Pokemon is itself,
@@ -40,10 +52,13 @@ public interface IPokemon {
     // checks if the pokemon is defeated
     public boolean isDefeated();
 
+    /* receives the HP from a potion, changing currentHP value */
     void usePotion(Potion potion);
 
+    /* receives the PP from a ether, changing currentPP value */
     void useEther(Ether ether);
 
+    /* sets currentHP and currentPP to their maximum values */
     void useFullRestore(FullRestore fullRestore);
 }
 

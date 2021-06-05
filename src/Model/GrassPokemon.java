@@ -10,13 +10,13 @@ public class GrassPokemon extends AbstractPokemon {
     // so it tells the other to receive the correct damage
 
 
-    // attacks another pokemon unless the current pokemon is defeated
+    /* attacks another pokemon unless the current pokemon is defeated */
     public void attack(IPokemon pokemon){
         if(!isDefeated()){
         pokemon.receiveGrassDamage(this);}
     }
 
-    // receives damage from a fire pokemon unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
+    /* receives damage from a fire pokemon unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon) */
     public void receiveFireDamage(FirePokemon firePokemon){
         if(!isDefeated()){
         setCurrentHP(getCurrentHP()- 10);}
@@ -24,7 +24,7 @@ public class GrassPokemon extends AbstractPokemon {
             System.out.println("Pokemon's can not attack defeated Pokemon");
         }
     }
-    // receives damage from a water pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
+    /* receives damage from a water pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon) */
     public void receiveWaterDamage(WaterPokemon waterPokemon){
         if(!isDefeated()){
             setCurrentHP(getCurrentHP()- 5);}
@@ -32,7 +32,7 @@ public class GrassPokemon extends AbstractPokemon {
             System.out.println("Pokemon's can not attack defeated Pokemon");
         }
     }
-    // receives damage from a grass pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon)
+    /* receives damage from a grass pokemon, unless the pokemon is defeated. (notice that the damage depends on the kind of the pokemon) */
     public void receiveGrassDamage(GrassPokemon grassPokemon){
         if(!isDefeated()){
             setCurrentHP(getCurrentHP()- 5);}

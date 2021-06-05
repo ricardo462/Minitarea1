@@ -8,6 +8,7 @@ public class GrassPokemonFactory extends AbstractFactory implements IFactory{
         super(name, species, maxHP, maxPP);
     }
 
+    /* creates a grass pokemon with the storage values, and returns it */
     @Override
     public GrassPokemon create() {
         return new GrassPokemon(getName(), getSpecies(), getMaxHP(), getMaxPP());
