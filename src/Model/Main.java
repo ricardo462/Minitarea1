@@ -7,9 +7,9 @@ import Model.IPokemon;
 public class Main {
     public static void main(String[] args) {
         // Creating Pokemon's
-        WaterPokemon squirtle = new WaterPokemon("Ed", "Squirtle", 100);
-        FirePokemon charmander = new FirePokemon("Edd", "Charmander", 100);
-        GrassPokemon bulbbasaur = new GrassPokemon("Eddy", "bulbasaur", 100);
+        WaterPokemon squirtle = new WaterPokemon("Ed", "Squirtle", 100, 5);
+        FirePokemon charmander = new FirePokemon("Edd", "Charmander", 100, 5);
+        GrassPokemon bulbbasaur = new GrassPokemon("Eddy", "bulbasaur", 100, 5);
 
         // Checking for the weaknesses and strengths
         System.out.println("Checking for weaknesses and strengths");

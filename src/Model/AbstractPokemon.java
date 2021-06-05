@@ -1,5 +1,9 @@
 package Model;
 
+import Model.Items.Ether;
+import Model.Items.FullRestore;
+import Model.Items.Potion;
+
 public abstract class AbstractPokemon implements IPokemon {
     private String name;
     private String species;
@@ -46,7 +50,7 @@ public abstract class AbstractPokemon implements IPokemon {
 
     // sets the HP of the pokemon. If it exceeds the maximum value, it sets it to the maximum
     public void setCurrentHP(int currentHP) {
-        if(currentHP > getMaxHP()) {
+        if(currentHP + getCurrentHP() > getMaxHP()) {
             this.currentHP = getMaxHP();
         } else {
             this.currentHP = currentHP;
@@ -58,7 +62,7 @@ public abstract class AbstractPokemon implements IPokemon {
     }
     // sets the PP of the pokemon. If it exceeds the maximum value, it sets it to the maximum
     public void setCurrentPP(int currentPP) {
-        if (currentPP > getMaxPP()) {
+        if (currentPP + getCurrentPP() > getMaxPP()) {
             this.currentPP = maxPP;
         } else {
             this.currentPP = currentPP;
@@ -81,5 +85,21 @@ public abstract class AbstractPokemon implements IPokemon {
     @Override
     public String toString() {
         return "Pokemon's name: " + getName() + ", Pokemon's type: "+ this.getClass().getName() + ", Pokemon's species: " + getSpecies() + ", Pokemon's current health points: " + getCurrentHP();
+    }
+
+    @Override
+    public void usePotion(Potion potion){
+        setCurrentHP(getCurrentHP() + potion.getRestoreHP());
+    }
+
+    @Override
+    public void useEther(Ether ether) {
+        setCurrentPP(getCurrentPP());
+    }
+
+    @Override
+    public void useFullRestore(FullRestore fullRestore) {
+        setCurrentHP(fullRestore.getRestoreHP());
+        setCurrentPP(fullRestore.getRestorePP());
     }
 }

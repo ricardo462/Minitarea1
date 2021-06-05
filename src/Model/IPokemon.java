@@ -1,5 +1,9 @@
 package Model;
 
+import Model.Items.Ether;
+import Model.Items.FullRestore;
+import Model.Items.Potion;
+
 public interface IPokemon {
     // Getters
     // gets the name of the pokemon
@@ -35,5 +39,11 @@ public interface IPokemon {
     public void receiveGrassDamage(GrassPokemon grassPokemon);
     // checks if the pokemon is defeated
     public boolean isDefeated();
+
+    void usePotion(Potion potion);
+
+    void useEther(Ether ether);
+
+    void useFullRestore(FullRestore fullRestore);
 }
 
